@@ -1,4 +1,3 @@
-```markdown:README.md
 # Saitama Solana Wallet
 
 A CLI wallet for Solana.
@@ -100,4 +99,3 @@ Public Key: 5aj3BoJSsVcgGJg59EvYGZWutu3tvo977SLnDhzdtesc
 ## License
 
 This project is licensed under the ISC License.
-```
