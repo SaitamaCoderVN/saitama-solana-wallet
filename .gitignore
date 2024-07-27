@@ -1,3 +1,6 @@
 mykeypair.json
 /node_modules
 package-lock.json
+/wallets
+config.json
+
