@@ -207,13 +207,38 @@ Output:
 ```
 Wallet removed: <walletName>
 ```
+### Help
+```sh
+ss-wallet help
+```
 
+Output:
+```
+Usage: ss-wallet <command> [options]
+
+Commands:
+- generate: Generate a new wallet
+- airdrop: Request a SOL airdrop
+- balance: Check wallet balance
+- send: Send a SOL transaction
+- import: Import a wallet from a file
+- list: List all wallets
+- select: Select a primary wallet
+- set-config: Configure network
+- show-private-key: Display private key
+- rename: Rename a wallet
+- recent-activity: View recent activity
+- sol-price: Check SOL price
+- show: Display wallet information
+- remove: Remove a wallet
+- help: Display help information
+```
 ## Examples
 
 ### Generate a New Wallet
 
 ```sh
-ss-wallet generate my-wallet.json
+ss-wallet generate my-wallet
 ```
 
 Output:
@@ -250,7 +275,7 @@ Balance for 5aj3BoJSsVcgGJg59EvYGZWutu3tvo977SLnDhzdtesc: 1 SOL
 ### Send Transaction
 
 ```sh
-ss-wallet send my-wallet.json 62x7R9JCfVgxZgwKq4FbW6aoKHjPdScvG8HXD5eiz2Wr 0.1
+ss-wallet send my-wallet 62x7R9JCfVgxZgwKq4FbW6aoKHjPdScvG8HXD5eiz2Wr 0.1
 ```
 
 Output:
