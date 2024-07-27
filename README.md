@@ -1,99 +1,261 @@
 # Saitama Solana Wallet
 
-A CLI wallet for Solana.
+Saitama Solana Wallet is a Command Line Interface (CLI) wallet for the Solana blockchain, providing essential functions to interact with the Solana network.
 
 ## Installation
-To install the Saitama Solana Wallet globally using npm, run:
+
+To install Saitama Solana Wallet globally using npm, run:
+
 ```sh
-npm install -g saitama-solana-wallet
+npm install -g ss-wallet
 ```
+
+## Key Features
+
+- Create and manage multiple Solana wallets
+- Request SOL airdrops (on testnet and devnet)
+- Check wallet balances
+- Send SOL transactions
+- Import wallets from files
+- View recent wallet activity
+- Check current SOL price
 
 ## Usage
-### Generate a Keypair
-To generate a new keypair and save it to a file:
+
+### Generate a New Wallet
+
 ```sh
-ss-wallet generate mykeypair.json
+ss-wallet generate
+```
+Output:
+```
+Keypair generated and saved to wallet.json
+Public Key: 5aj3BoJSsVcgGJg59EvYGZWutu3tvo977SLnDhzdtesc
+Private Key: a1b2c3d4...
+Mnemonic Phrase (24 words):
+word1 word2 word3 ... word24
 ```
 
-### Airdrop SOL
-To request an airdrop of SOL to a specified public key:
+or
+
+```sh
+ss-wallet generate [filename]
+```
+
+Output:
+```
+Keypair generated and saved to [filename].json
+Public Key: 5aj3BoJSsVcgGJg59EvYGZWutu3tvo977SLnDhzdtesc
+Private Key: a1b2c3d4...
+Mnemonic Phrase (24 words):
+word1 word2 word3 ... word24
+```
+
+### Request SOL Airdrop
+
 ```sh
 ss-wallet airdrop <publicKey>
 ```
 
+Output:
+```
+Airdrop requested for <publicKey>
+```
+
 ### Check Balance
-To check the balance of a specified public key:
+
 ```sh
 ss-wallet balance <publicKey>
 ```
 
-### Send a Transaction
-To send a transaction from your keypair to a recipient's public key:
-```sh
-ss-wallet send mykeypair.json <recipientPublicKey> <amount>
+Output:
+```
+Balance for <publicKey>: <balance> SOL
 ```
 
-### Import a Keypair
-To import an existing keypair from a file:
+### Send Transaction
+
 ```sh
-ss-wallet import mykeypair.json
+ss-wallet send <senderWallet> <recipientAddress> <amount>
 ```
 
-## Commands
+Output:
+```
+Transaction successful with signature: <signature>
+```
 
-- `generate <filepath>`: Generate a new keypair and save to a file.
-- `airdrop <publicKey>`: Request an airdrop of SOL to the specified public key.
-- `balance <publicKey>`: Check the balance of the specified public key.
-- `send <keypairFile> <recipientPublicKey> <amount>`: Send a specified amount of SOL to a recipient.
-- `import <filepath>`: Import an existing keypair from a file.
+### Import Wallet
+
+```sh
+ss-wallet import <filepath>
+```
+
+Output:
+```
+Keypair loaded from <filepath>
+Public Key: <publicKey>
+```
+
+### List Wallets
+
+```sh
+ss-wallet list
+```
+
+Output:
+```
+Wallets:
+- <walletName1>
+- <walletName2>
+- <walletName3>
+```
+
+### Select Primary Wallet
+
+```sh
+ss-wallet select <walletName>
+```
+
+Output:
+```
+Primary wallet set to <walletName>
+```
+
+### Configure Network
+
+```sh
+ss-wallet set-config <networkName>
+```
+
+Output:
+```
+Network configuration set to <networkName>
+```
+
+### View Private Key
+
+```sh
+ss-wallet show-private-key
+```
+
+Output:
+```
+Private Key: <privateKey>
+```
+
+### Rename Wallet
+
+```sh
+ss-wallet rename <oldName> <newName>
+```
+
+Output:
+```
+Wallet renamed from <oldName> to <newName>
+```
+
+### View Recent Activity
+
+```sh
+ss-wallet recent-activity
+```
+
+Output:
+```
+Recent activity for <publicKey>:
+- <Last Most Recent Activity 1>
+- <Last Most Recent Activity 2>
+- <Last Most Recent Activity 3>
+```
+
+### Check SOL Price
+
+```sh
+ss-wallet sol-price
+```
+
+Output:
+```
+Current SOL price: <price>
+```
+
+### Display Wallet Information
+
+```sh
+ss-wallet show
+```
+
+Output:
+```
+Wallet information:
+- Name: <wallet-name.json>
+- Path: <wallet-path>
+- Public Key: <wallet-public-key>
+- Balance: <wallet-balance>
+- Network: <Solana Network>
+- Current SOL price: <Solana Price>
+- Value of the wallet: <Solana Value>
+```
+
+### Remove Wallet
+
+```sh
+ss-wallet remove <walletName>
+```
+
+Output:
+```
+Wallet removed: <walletName>
+```
 
 ## Examples
 
-### Generate a Keypair
+### Generate a New Wallet
+
 ```sh
-ss-wallet generate mykeypair.json
+ss-wallet generate my-wallet.json
 ```
+
 Output:
 ```
-Keypair generated and saved to mykeypair.json
+Keypair generated and saved to my-wallet.json
 Public Key: 5aj3BoJSsVcgGJg59EvYGZWutu3tvo977SLnDhzdtesc
+Private Key: a1b2c3d4...
+Mnemonic Phrase (24 words):
+word1 word2 word3 ... word24
 ```
-    
-### Airdrop SOL
+
+### Request Airdrop
+
 ```sh
 ss-wallet airdrop 5aj3BoJSsVcgGJg59EvYGZWutu3tvo977SLnDhzdtesc
 ```
+
 Output:
 ```
 Airdrop requested for 5aj3BoJSsVcgGJg59EvYGZWutu3tvo977SLnDhzdtesc
 ```
 
 ### Check Balance
+
 ```sh
 ss-wallet balance 5aj3BoJSsVcgGJg59EvYGZWutu3tvo977SLnDhzdtesc
 ```
+
 Output:
 ```
 Balance for 5aj3BoJSsVcgGJg59EvYGZWutu3tvo977SLnDhzdtesc: 1 SOL
 ```
 
-### Send a Transaction
+### Send Transaction
+
 ```sh
-ss-wallet send mykeypair.json 62x7R9JCfVgxZgwKq4FbW6aoKHjPdScvG8HXD5eiz2Wr 0.1
+ss-wallet send my-wallet.json 62x7R9JCfVgxZgwKq4FbW6aoKHjPdScvG8HXD5eiz2Wr 0.1
 ```
+
 Output:
 ```
 Transaction successful with signature: 59dtaC8TGXrszRiW9WoqGAmq1zhhDMWHnVKq4PBqUHGXrDsD5p2M8HperktcBHfeKd6THMw4yCzxDeiQfRegTse6
-```
-
-### Import a Keypair
-```sh
-ss-wallet import mykeypair.json
-```
-Output:
-```
-Keypair loaded from mykeypair.json
-Public Key: 5aj3BoJSsVcgGJg59EvYGZWutu3tvo977SLnDhzdtesc
 ```
 
 ## License
