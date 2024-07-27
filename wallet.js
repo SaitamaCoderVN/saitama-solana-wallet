@@ -97,7 +97,7 @@ const getCurrentSOLPrice = async () => {
 program
   .name('ss-wallet')
   .description('A CLI wallet for Solana')
-  .version('1.0.2');
+  .version('1.1.1');
 
 program
   .command('generate')

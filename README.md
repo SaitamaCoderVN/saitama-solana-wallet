@@ -20,6 +20,22 @@ npm install -g ss-wallet
 - View recent wallet activity
 - Check current SOL price
 
+## Commands
+<!-- commands -->
+* [`ss-wallet airdrop`](#ss-wallet-airdrop)
+* [`ss-wallet balance`](#ss-wallet-balance)
+* [`ss-wallet generate`](#ss-wallet-generate)
+* [`ss-wallet help [COMMAND]`](#ss-wallet-help-command)
+* [`ss-wallet list`](#ss-wallet-list)
+* [`ss-wallet select`](#ss-wallet-select)
+* [`ss-wallet send`](#ss-wallet-send)
+* [`ss-wallet recent-activity`](#ss-wallet-recent-activity)
+* [`ss-wallet sol-price`](#ss-wallet-sol-price)
+* [`ss-wallet set-config`](#ss-wallet-set-config)
+* [`ss-wallet show-private-key`](#ss-wallet-show-private-key)
+* [`ss-wallet show`](#ss-wallet-show)
+* [`ss-wallet remove`](#ss-wallet-remove)
+
 ## Usage
 
 ### Generate a New Wallet
