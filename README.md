@@ -7,7 +7,7 @@ Saitama Solana Wallet is a Command Line Interface (CLI) wallet for the Solana bl
 To install Saitama Solana Wallet globally using npm, run:
 
 ```sh
-npm install -g ss-wallet
+npm install -g saitama-solana-wallet
 ```
 
 ## Key Features

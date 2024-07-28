@@ -272,6 +272,7 @@ program
       const validWallets = config.wallets.filter(wallet => wallet && wallet.path);
       if (validWallets.length === 0) {
         console.log(chalk.yellow('No wallets found.'));
+        closeReadline();
         return;
       }
       console.log(chalk.green('Wallet list:'));
@@ -280,8 +281,11 @@ program
           const keypair = loadKeypair(wallet.path);
           const publicKey = keypair.publicKey.toBase58();
           console.log(`${index + 1}. ${wallet.name} (Public Key: ${publicKey})`);
+          closeReadline();
         } catch (error) {
           // Skip invalid wallets
+          console.log(chalk.red(`Error loading wallet: ${error.message}`));
+          closeReadline();
         }
       });
       closeReadline();
